@@ -14,7 +14,7 @@ const showText = function() {
 
 // --------------- Solo puedes tocar desde aquí ------------- //
 showText.text = 'Hola';
-showText2 = showText;
+showText2 = {...showText}; //the reference was being modified and showtext and showtext2 point to a single object, it was missing to clone it
 showText2.text = 'Adiós';
 // --------------- hasta aquí ------------------------------- //
 
