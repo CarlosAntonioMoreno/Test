@@ -1,75 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 6</title>
+    <style>
+        section {
+            width: 80%;
+            height: auto;
+            margin: 30px;
+        }
+
+        h1 {
+            font-size: 4vh;
+        }
+
+        p {
+            font-size: 3vh;
+            text-shadow: 2px 2px 2px #CE5937;
+            width: 70%;
+        }
+
+        article {
+            border-radius: 25px;
+            box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            max-width: 800px;
+            margin-top: 20px;
+            background: #2eb9fa;
+            color: aliceblue;
+            /* Old browsers */
+            background: -moz-linear-gradient(-45deg, #2e75fa 8%, #3129c8 83%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, #2e75fa 8%, #3129c8 83%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, #2e75fa 8%, #3129c8 83%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#2e75fa', endColorstr='#3129c8', GradientType=1);
+        }
+
+        img {
+            width: 200px;
+            overflow: hidden;
+            height: 300px;
+            border-radius: 8px;
+            float: right;
+            margin-top: -120px;
+            margin-left: -40px;
+            background-color: #fff;
+        }
+        img:hover{
+            z-index: 3;
+            width: 200px;
+            height: auto;
+        }
+
+        span {
+            display: block;
+            margin: 7px;
+            background: #11e95b;
+            padding: 7px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 24px;
+            font-weight: 200;
+            color: #fff;
+            border-radius: 7px;
+            margin-top: -13px;
+            margin-left: -5px;
+            box-shadow: -10px 20px 15px -10px rgba(17, 233, 91, 0.3);
+            text-shadow: #000;
+        }
+
+        button {
+            display: block;
+            height: 50px;
+            width: 200px;
+            font-size: 2vh;
+            background: #11e95b;
+            padding: 7px 20px;
+            text-align: center;
+            font-weight: 200;
+            color: #fff;
+            border-radius: 7px;
+            margin-top: -13px;
+            margin-left: -5px;
+            box-shadow: -10px 20px 15px -10px #11e95b4d;
+            border-color: transparent;
+
+        }
+
+        button:hover {
+            background-color: #11e95b4d;
+        }
+
+        .button-show-more {
+            font-size: 1vh;
+            color: #fff;
+            border: 0px solid transparent;
+            background-color: transparent;
+            width: auto;
+        }
+    </style>
 </head>
+
 <body>
     <article>
         <h1>Maquetado</h1>
-        <p>Un cliente nos ha pedido un ejemplo de como se mostrarían los productos en su web. Dentro del la etiqueta <code>&lt;section&gt;&lt;/section&gt;</code> puede encontrar el listado de productos. ¿Podrías maquetarlos?</p>
+        <p>Un cliente nos ha pedido un ejemplo de como se mostrarían los productos en su web. Dentro del la etiqueta
+            <code>&lt;section&gt;&lt;/section&gt;</code> puede encontrar el listado de productos. ¿Podrías maquetarlos?
+        </p>
     </article>
 
     <section>
         <article>
             <h1>Audioguía interactiva</h1>
-            <img src="https://vocces.com/wp-content/uploads/dispositivos-con-app-de-audioguia-massima-de-vocces-lab-700900-min.png">
+            <img class="product-img"
+                src="https://vocces.com/wp-content/uploads/dispositivos-con-app-de-audioguia-massima-de-vocces-lab-700900-min.png">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, aperiam.</p>
             <span>Descuento -50%</span>
             <span>Precio desde 9999.99€</span>
-            <button>Ver más</button>
+            <button class="button-show-more">Ver más</button>
             <button>Contactar</button>
         </article>
         <article>
             <h1>Articketing</h1>
-            <img src="https://vocces.com/wp-content/uploads/dispositivos-responsive-con-instalacion-del-software-articketing-de-vocces-lab-min.png">
+            <img class="product-img"
+                src="https://vocces.com/wp-content/uploads/dispositivos-responsive-con-instalacion-del-software-articketing-de-vocces-lab-min.png">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, aperiam.</p>
             <span>Precio desde 9999.99€</span>
-            <button>Ver más</button>
+            <button class="button-show-more">Ver más</button>
             <button>Contactar</button>
         </article>
         <article>
             <h1>Gafas VR 360</h1>
-            <img src="https://vocces.com/wp-content/uploads/detalles-modulo-vr-360-con-gafas-de-la-catedral-de-jaen-vocces-360.webp">
+            <img class="product-img"
+                src="https://vocces.com/wp-content/uploads/detalles-modulo-vr-360-con-gafas-de-la-catedral-de-jaen-vocces-360.webp">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, aperiam.</p>
             <span>Precio desde 9999.99€</span>
-            <button>Ver más</button>
+            <button class="button-show-more">Ver más</button>
             <button>Contactar</button>
         </article>
         <article>
             <h1>Gestion de espacios</h1>
-            <img src="https://vocces.com/wp-content/uploads/gestion-integral-diseno-de-tiendas-y-espacios-en-monumentos-de-vocces-y-artisplendore.jpg">
+            <img class="product-img"
+                src="https://vocces.com/wp-content/uploads/gestion-integral-diseno-de-tiendas-y-espacios-en-monumentos-de-vocces-y-artisplendore.jpg">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, aperiam.</p>
             <span>Precio desde 9999.99€</span>
-            <button>Ver más</button>
+            <button class="button-show-more">Ver más</button>
             <button>Contactar</button>
         </article>
         <article>
             <h1>Ticket point</h1>
-            <img src="https://vocces.com/wp-content/uploads/ticketspoint-para-venta-de-entradas-sin-colas-articketing-de-vocces-lab.png">
+            <img class="product-img"
+                src="https://vocces.com/wp-content/uploads/ticketspoint-para-venta-de-entradas-sin-colas-articketing-de-vocces-lab.png">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, aperiam.</p>
             <span>Precio desde 9999.99€</span>
-            <button>Ver más</button>
+            <button class="button-show-more">Ver más</button>
             <button>Contactar</button>
         </article>
         <article>
             <h1>Desarrollo de sofware</h1>
-            <img src="https://vocces.com/wp-content/uploads/avila-mockup.jpg">
+            <img class="product-img" src="https://vocces.com/wp-content/uploads/avila-mockup.jpg">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, aperiam.</p>
             <span>Precio desde 9999.99€</span>
-            <button>Ver más</button>
+            <button class="button-show-more">Ver más</button>
             <button>Contactar</button>
         </article>
         <article>
             <h1>Soporte especializado</h1>
-            <img src="https://vocces.com/wp-content/uploads/hombre-atendiendo-llamada-de-soporte-de-articketing-de-vocces-lab.jpg">
+            <img class="product-img"
+                src="https://vocces.com/wp-content/uploads/hombre-atendiendo-llamada-de-soporte-de-articketing-de-vocces-lab.jpg">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, aperiam.</p>
             <span>Precio desde 9999.99€</span>
-            <button>Ver más</button>
+            <button class="button-show-more">Ver más</button>
             <button>Contactar</button>
         </article>
     </section>
 </body>
+
 </html>
