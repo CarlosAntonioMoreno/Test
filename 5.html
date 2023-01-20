@@ -1,16 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 5</title>
+    <script>
+        function loadData() { //Call Endpoint to load user list
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())
+                .then(json => {
+                    printUsers(json);
+                });
+        }
+        function printUsers(params) {               //Function to render User list
+            const container = document.getElementById('users-list')
+            params.forEach(user => {
+                container.innerHTML = `
+    ${container.innerHTML}
+    <li>
+    <h2 onclick=showUser(${user.id}) style="cursor:pointer">${user.name}</h2>
+    <div class="box-contain" id="user${user.id}" style="border:1px solid darkblue; width:300px; display:none;">
+        <label>Email:${user.email}</label>
+        <br/><label>Addrees</label>
+        <br/><label>Street :${user.address.street}</label>
+        <br/><label>Suite :${user.address.suite}</label>
+        <br/><label>City :${user.address.city}</label>
+        <br/><label>Zipcode :${user.address.zipcode}</label>
+        <br/><label>Lat :${user.address.geo.lat}</label>
+        <br/><label>Lng :${user.address.geo.lng}</label>
+
+        <br/><label>Phone :${user.phone}</label>
+        <br/><label>Website :${user.website}</label>
+        <br/><label>Company</label>
+        <br/><label>Name :${user.company.name}</label>
+        <br/><label>Catch Phrase :${user.company.catchPhrase}</label>
+        <br/><label>Bs :${user.company.bs}</label>
+        
+    </div>
+    
+    </li>
+  `;
+            });
+        }
+        function showUser(params) {  //Function to hide box and show in the onclick event
+            const boxs = document.getElementsByClassName("box-contain");
+            for (let index = 0; index < boxs.length; index++) {
+                const element = boxs[index];
+                element.style.display = "none";
+            }
+           
+            const div = document.getElementById("user" + params);
+            div.style.display = "block";
+
+        }
+    </script>
 </head>
-<body>
+
+<body onload=loadData()>
     <article>
         <h1>Listado de usuarios</h1>
-        <p>Queremos mostrar el listado de usarios que existen en nuestro sistema y que al hacer click sobre uno de ellos nos muestre la información del usuario.</p>
-        <p>Para obtener el listado de usuarios el backend nos ha proporcionado el siguiente endpoint <a href="https://jsonplaceholder.typicode.com/users" target="_blank">Users</a>.</p>
+        <p>Queremos mostrar el listado de usarios que existen en nuestro sistema y que al hacer click sobre uno de ellos
+            nos muestre la información del usuario.</p>
+        <p>Para obtener el listado de usuarios el backend nos ha proporcionado el siguiente endpoint <a
+                href="https://jsonplaceholder.typicode.com/users" target="_blank">Users</a>.</p>
     </article>
+    <ul id="users-list"></ul>
 </body>
+
 </html>
